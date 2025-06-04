@@ -40,30 +40,37 @@ test("ten test case", async ({ page }) => {
 
 4. Input: thực hiện nhập form
 - sử dụng hàm fill: giống việc copy/paste content vào 1 ô
-    + cú pháp: page.locator("//input").fill("Playwrigth Việt Nam");
+    + cú pháp: page.locator("//Xpath").fill("Playwrigth Việt Nam");
 
 - Sử dụng pressSequentially: giống việc gõ từng chữ vào ô 
     + cú pháp: 
-    page.locator("//input").pressSequentially("Playwrigth Việt Nam", {
+    page.locator("//Xpath").pressSequentially("Playwrigth Việt Nam", {
         delay: 100,
     });
 
 
 5. Radio/checkbox
 - lấy giá trị hiện tại đang là check hay không
-    const isCheck = page.locator('//input').isChecked();
+    const isCheck = page.locator('//Xpath').isChecked();
 
 - Check/uncheck
-    page.locator('//input').check();
-    page.locator('//input').setCheck(false);
+    page.locator('//Xpath').check();
+    page.locator('//Xpath').setCheck(false);
 
 
 6. Select option
-    await page.locator("//select").selectOption();
+    await page.locator("//Xpath").selectOption();
 
 
 7. Set input file
-    await page.locator("//input").setInputFile("relative path muốn upload")
+    await page.locator("//Xpath").setInputFile("relative path muốn upload")
+
+8. Hover : awaite page.locator('//Xpath').hover();
+
+
+9. Confirmation dialog
+    page.on('dialog', dialog => dialog.accept());
+    
 
 */
 
@@ -80,7 +87,7 @@ test("ten test case", async ({ page }) => {
     await page.locator('//input[@id="username"]').fill("K14 Playwrigth");
 
     // pressSequentially
-    await page.locator('//input[@id="username"]').pressSequentially("K14 Playwrigth Test basic syntax");
+    await page.locator('//input[@id="email"]').pressSequentially("K14 Playwrigth Test basic syntax");
 
     await page.locator('//input[@value = "male"]').isChecked();
     const isChecked = await page.locator('//input[@value = "male"]').isChecked();
