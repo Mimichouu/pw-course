@@ -32,7 +32,7 @@ test("ten test case", async ({ page }) => {
 
 3.2 Click
 - Single click: await page.locator("selector").click();
-- Double click: await page.locator("selector").dbclick();
+- Double click: await page.locator("selector").dblclick();
 - Click nhiều lần : await page.locator("selector").click({clickCount: 5}); -> 5: số lần click
 - Click chuột phải: await page.locator("selector").click({button: "right"});
 - Click chuột kèm bàn phím khác: await page.locator("selector").click({modifiers: ["tổ hợp phím"]});
@@ -69,7 +69,9 @@ test("ten test case", async ({ page }) => {
 
 
 9. Confirmation dialog
-    page.on('dialog', dialog => dialog.accept());
+    page.on('dialog', async dialog => {
+        await dialog.accept()
+    });
     
 
 */
