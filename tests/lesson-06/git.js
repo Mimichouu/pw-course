@@ -15,7 +15,7 @@
 3. git push
 - đưa code lên github
 - câu lệnh:  git push <remote_name> <branch_name>
-git push origin main
+git push origin branchA
 
 
 4. git pull
@@ -31,7 +31,40 @@ git pull origin branchA
 - xem lại những lần stash: git stash list
 
 
-6. Convention
+6. git merge (đứng ở nhánh main rồi git merge)
+- merge code = gộp code từ nhánh A và main
+- merge strategy: 
+    + fast-forward merge -> cú pháp:  git merge <branch_name_cần merge>
+        _ khi merge không tạo ra commit merge
+        _ xảy ra khi không có thay đổi nào trên nhánh chính kể từ lúc tạo nhánh feature
+    + three-way merge -> cú pháp: git merge <branch_name_cần_merge>
+        _ Khi merge có tạo ra commit merge
+        _ xảy ra khi bạn muốn merge feature branch chính mà lịch sử của 2 branch đã có sự khác nhau
+        -> có thể thay đổi message, nếu k đổi: ấn ESC rồi ấn :wq
+
+-> tạo file mới: câu lệnh: touch "file_name"
+
+7. git conflict 
+- là xung đột xyar ra khi 2 ng cùng sửa 1 file sau đó merge vào với nhau
+- xử lý conflict
+    + xóa hoặc giữ các phần code tương ứng
+    + xóa các phần đánh dấu conflict
+-> xong git add và git commit như bt
+
+8. git rebase (đứng ở nhánh khác rồi git rebase về main)
+- tái sắp xếp lại lịch sử commit của nhánh sao cho commit mới của nhánh đó nằm trên cùng 1 lịch sử của nhánh khác
+- câu lệnh: git rebase <branch_name_cần_rebase> (git rebase main: rebase commit ở nhánh main về feat/A)
+
+9. git squash
+- là hành động gộp các commit lại thành 1 commit duy nhất -> hạn chế các commit k cần thiết
+- chỉ cho gộp các commit sau commit đầu tiên
+- câu lệnh: git rebase -i HEAD~{số lượng commit cần gộp}
+-> đi sửa commit: ấn phím "i" rồi sửa: muốn gộp commit nào vào thì đổi thành s, sửa xong ấn ESC rồi ấn :wq
+-> sửa commit message: ấn phím 'i' rồi sửa: ấn # vào đầu commit để xóa, sửa xong ấn ESC rồi ấn :wq
+
+
+
+. Convention
     - đặt tên branch: <type>/<short-description>
         + type:
             - feat: tính năng mới

@@ -31,3 +31,22 @@
 
 */
 
+/* DOM: Quy ước
+- Node gốc
+
+- Node hiện tại: self
+    + parent: là node phía trên trực tiếp của node hiện tại
+    + children: là node phía dưới trực tiếp của node hiện tại
+    + ancestor (tổ tiên): những node phía trên trực hệ của thẻ hiện tại
+    + ancestor-or-self: nhũng node phía trên trực hệ của thẻ hiện tại và cả chính nó
+    + descendant (hậu duệ): những node phía dưới trực hệ của thẻ hiện tại 
+    + descendant-or-self: những node phía dưới trực hệ của thẻ hiện tại và chính nó
+    + sibling (anh em): những phần tử cùng cấp - ngang hàng
+    + following: gồm các node ở phía sau nút đóng của node hiện tại (không bao gồm thẻ con cháu của node hiện tại)
+    + preceding: gồm các node ở phía trước của node hiện tại (không bao gồm thẻ tổ tiên của node hiện tại)
+    + following-sibling: Anh em phía sau
+    + preceding-sibling: anh em phía trước
+
+- Node cần chú ý
+
+*/
