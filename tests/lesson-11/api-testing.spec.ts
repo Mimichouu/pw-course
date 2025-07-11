@@ -138,4 +138,60 @@ test('api-demo2', async ({request}) => {
 
 
 
+/* 
+POM API: tổ chức POM cho API test
+    ● Mục tiêu 
+        ○ File test gọn gàng hơn. 
+        ○ Không chứa các setup (baseURL, url của các API)
+    ● Cách tổ chức POM API 
+        ○ Có thuộc tính: request 
+        ○ Có thuộc tính: baseURL 
+        ○ Define các endpoint giống như các XPath
+
+POM Styles: một vài styles viết POM
+1. POM manager
+    - Quản lý nhiều page object.
+    - Các page objects có thể được tạo và truy cập từ một nơi duy nhất.
+    - Các page objects độc lập với nhau.
+    - Các page chỉ được tạo khi cần thiết.
+VD: 
+import { Page } from "@playwright/test";
+import { LoginPage } from "./00-pom-login";
+import { DashboardPage } from "./00-pom-dashboard";
+export class PomManager {
+    page: Page;
+    constructor(page: Page) {
+        this.page = page;
+    }
+    getLoginPage() {
+        return new LoginPage(this.page);
+    }
+
+    getDashboardPage() {
+        return new DashboardPage(this.page);
+    }
+}
+
+2. Return POM from another POM
+- Các method của 1 Page Object trả về Page Object khác.
+Ex:
+login > add to cart > checkout > confirm
+
+import { Page } from '@playwright/test';
+import { DashboardPage } from './00-pom-dashboard';
+export class LoginReturnPage {
+    page: Page;
+    constructor(page: Page) {
+        this.page = page;
+    }
+    login() {
+        const dashboardPage =
+        return new DashboardPage(page);
+        return new DashboardPage(this.page);
+    }
+}
+
+*/
+
+
 
