@@ -1,3 +1,10 @@
+/* 2. Return POM from another POM
+- Các method của 1 Page Object trả về Page Object khác.
+Ex:
+login > add to cart > checkout > confirm
+
+*/
+
 import { Page } from "@playwright/test";
 import { ProductPage } from "./product-page";
 
