@@ -1,4 +1,5 @@
-import { Page, test as base } from '@playwright/test'; // test của pw đang tên là base -> đổi như vậy để đồng bộ tất cả dùng test
+import { Page, test as base } from '@playwright/test'; 
+// test của pw đang tên là base -> đổi như vậy để đồng bộ tất cả dùng test
 
 // cú pháp tạo test.extend() có fixture tên dashboard
 // khai báo type of fixture -> cú pháp: <{ten fixture: type}>

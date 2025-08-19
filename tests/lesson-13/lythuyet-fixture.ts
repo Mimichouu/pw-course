@@ -25,7 +25,9 @@ const test = base.extend({
 
 
 2. Built-in fixture
+
 Fixture            Type                        Mô tả
+
 page               Page                        Tạo một page riêng biệt cho test.
 context            BrowserContext              Tạo một context riêng biệt cho test. Fixture page phía trên cũng cùng context với context này.
 browser            Browser                     Browser được dùng chung giữa các test để tối ưu tài nguyên.

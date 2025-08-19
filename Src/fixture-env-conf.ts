@@ -4,7 +4,7 @@ export class EnvConf {
     get(key:string) {
         let keyPostFix = '_PROD';
 
-        if (process.env.ENV == 'dev') {
+        if (process.env.ENV === 'dev') {
             keyPostFix = '_DEV';
         }
 

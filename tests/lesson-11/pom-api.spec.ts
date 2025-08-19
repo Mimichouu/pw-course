@@ -1,5 +1,5 @@
 import { test, request, expect } from "@playwright/test";
-import { ConduitPage} from "../../api/api-conduit-page";
+import { ConduitPage} from "../../api/api-conduit-page.ts";
 
 test('pom-api', async ({request}) => {
     const baseurl: string = 'http://conduit-api.bondaracademy.com/api';
